@@ -1,6 +1,15 @@
 package com.ardeshir.tddmockitokotlin.domain
 
-data class Course(val id: Int,
-                  val name: String,
-                  val description: String,
-                  val fee: Long)
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+
+@Entity
+data class Course(
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: Int? = null,
+        val name: String? = null,
+        val description: String? = null,
+        val fee: Long? = null)

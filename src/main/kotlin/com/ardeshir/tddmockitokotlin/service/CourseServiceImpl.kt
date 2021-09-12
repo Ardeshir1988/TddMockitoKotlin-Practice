@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service
 @Service
 class CourseServiceImpl(val courseRepository: CourseRepository) : CourseService {
     override fun getAllCourses(): List<Course> = courseRepository.findAll()
+    override fun saveCourse(course: Course): Course = courseRepository.save(course)
 }
